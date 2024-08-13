@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 18px;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+        
+        :root {
+            --primary-color: #c6c3c3;
+            --second-color: #ffffff;
+            --black-color: #000000;
+        }
+        
+        body {
+            background-image: url("https://wallpapercave.com/wp/wp7853291.jpg");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        
+        .wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+        
+        .register_box {
+            position: relative;
+            width: 546px;
+            backdrop-filter: blur(25px);
+            border: 2px solid var(--primary-color);
+            border-radius: 15px;
+            padding: 2em 2.5em 4em 2.5em;
+            color: var(--second-color);
+            box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+        }
+        
+        .register-header {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary-color);
+            width: 140px;
+            height: 70px;
+            border-radius: 0 0 20px 20px;
+        }
+        
+        .register-header span {
+            font-size: 30px;
+            color: var(--black-color);
+        }
+        
+        .input_box {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            margin: 20px 0;
+        }
+        
+        .input-field {
+            width: 100%;
+            height: 55px;
+            font-size: 16px;
+            background: transparent;
+            color: var(--second-color);
+            padding-inline: 20px 50px;
+            border: 2px solid var(--primary-color);
+            border-radius: 30px;
+            outline: none;
+        }
+        
+        .label {
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            transition: 0.2s;
+        }
+        
+        .input-field:focus ~ .label,
+        .input-field:valid .label {
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 14px;
+            background-color: var(--primary-color);
+            border-radius: 30px;
+            color: var(--black-color);
+            padding: 0 10px;
+        } 
+        
+        .input-submit {
+            width: 100%;
+            height: 50px;
+            background: #ececec;
+            font-size: 16px;
+            font-weight: 500;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .input-submit:hover {
+            background: var(--second-color);
+        }
+        
+        @media only screen and (max-width: 564px) {
+            .wrapper {
+                padding: 20px;
+            }
+        
+            .register_box {
+                padding: 2em 1.5em;
+            }
+        }
+
+        .register {
+            text-align: center;
+            margin-top: -43px;
+        }
+        
+        .register span {
+            color: var(--second-color);
+        }
+        
+        .register a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .register a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="register_box">
+            <div class="register-header">
+                <span>Register</span>
+            </div>
+
+            <form action="/submit" method="POST">
+                <div class="input_box">
+                    <input type="text" id="firstname" name="firstname" class="input-field" required>
+                    <label for="firstname" class="label">First Name</label>
+                </div>
+
+                <div class="input_box">
+                    <input type="text" id="lastname" name="lastname" class="input-field" required>
+                    <label for="lastname" class="label">Last Name</label>
+                </div>
+
+                <div class="input_box">
+                    <input type="text" id="place" name="place" class="input-field" required>
+                    <label for="place" class="label">Place</label>
+                </div>
+
+                <div class="input_box">
+                    <input type="tel" id="phone" name="phone" class="input-field" required>
+                    <label for="phone" class="label">Phone</label>
+                </div>
+
+                <div class="input_box">
+                    <input type="email" id="email" name="email" class="input-field" required>
+                    <label for="email" class="label">Email</label>
+                </div>
+
+                <div class="input_box">
+                    <textarea id="address" name="address" class="input-field" rows="4" required></textarea>
+                    <label for="address" class="label">Address</label>
+                </div>
+
+                <div class="input_box">
+                    <input type="submit" class="input-submit" value="Register">
+                </div>
+            </form>
+            <div class="register">
+                <span>Do you have an account? <a href="#">login</a></span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
